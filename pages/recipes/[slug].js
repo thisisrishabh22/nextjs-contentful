@@ -32,6 +32,7 @@ export async function getStaticProps({ params }) {
     props: {
       recipe: items[0],
     },
+    revalidate: 5,
   };
 }
 
@@ -47,7 +48,7 @@ export default function RecipeDetails({ recipe }) {
           height={featuredImage.fields.file.details.image.height}
           width={featuredImage.fields.file.details.image.width}
         />
-        <h2>{ title }</h2>
+        <h2>{title}</h2>
       </div>
       <div className="info">
         <p>Take about {cookingTime} mins to cook.</p>
@@ -68,7 +69,7 @@ export default function RecipeDetails({ recipe }) {
         h3 {
           text-transform: uppercase;
         }
-        .banner{
+        .banner {
           display: flex;
           flex-direction: column;
           align-items: center;
